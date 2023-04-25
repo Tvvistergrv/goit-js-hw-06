@@ -15,16 +15,11 @@ const ingredients = [
 
 
 const ingredientsRefs = document.querySelector("#ingredients");
-const ingredientsMarkup = [];
 
-function createIngredientsList(ingredients = []) {
-  ingredients.map((elem) => {
+const itemRef = ingredients.map((elem) => {
     const item = document.createElement("li");
     item.textContent = elem;
     item.classList.add("item");
-    ingredientsMarkup.push(item);
+    return item;
   });
-  ingredientsRefs.append(...ingredientsMarkup);
-}
-
-createIngredientsList(ingredients);
+  ingredientsRefs.append(...itemRef);
